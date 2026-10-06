@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan 4</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 16px;
+      background: #f8fafc;
+      color: #1e293b;
+      transition: 0.3s;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    .kotak {
+      background: #fff;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 14px;
+    }
+
+    .kotak h2 {
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    input {
+      padding: 8px;
+      width: 180px;
+      margin-right: 6px;
+    }
+
+    button {
+      padding: 8px 14px;
+      cursor: pointer;
+      margin: 3px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background: #f1f5f9;
+    }
+
+    .hasil {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #1d4ed8;
+    }
+
+    .form-input {
+      margin-bottom: 8px;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+
+    .selesai {
+      text-decoration: line-through;
+      color: gray;
+    }
+
+    /* Dark Mode */
+    body.gelap {
+      background: #1e293b;
+      color: #f8fafc;
+    }
+
+    body.gelap .kotak {
+      background: #334155;
+      border-color: #64748b;
+    }
+
+    body.gelap input {
+      background: #475569;
+      color: white;
+      border: 1px solid #64748b;
+    }
+
+    body.gelap th {
+      background: #475569;
+    }
+
+    body.gelap td,
+    body.gelap th {
+      border-color: #64748b;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Latihan 4 (124140123)</h1>
+
+
+  <!-- 1. Form Mahasiswa -->
+  <div class="kotak">
+    <h2>1. Form Data Mahasiswa</h2>
+
+    <div class="form-input">
+      <label>
+        Nama:
+        <input type="text" id="input-nama">
+      </label>
+    </div>
+
+    <div class="form-input">
+      <label>
+        NIM:
+        <input type="text" id="input-nim">
+      </label>
+    </div>
+
+    <div class="form-input">
+      <label>
+        Jurusan:
+        <input type="text" id="input-jurusan">
+      </label>
+    </div>
+
+    <div id="pesan-validasi" class="error"></div>
+
+    <button id="btn-tambah">Tambah Mahasiswa</button>
+
+    <div id="out-mahasiswa"></div>
+  </div>
+
+
+  <!-- 2. Local Storage -->
+  <div class="kotak">
+    <h2>2. Penyimpanan LocalStorage</h2>
+
+    <button id="btn-simpan">Simpan Data</button>
+    <button id="btn-tampilkan">Tampilkan Data</button>
+
+    <div class="hasil" id="out-storage"></div>
+  </div>
+
+
+  <!-- 3. Search Post API -->
+  <div class="kotak">
+    <h2>3. Search Post dari API</h2>
+
+    <input type="text" id="input-cari" placeholder="Cari berdasarkan title">
+
+    <button id="btn-cari">Cari</button>
+
+    <div id="out-post"></div>
+  </div>
+
+
+  <!-- 4. Dark Mode -->
+  <div class="kotak">
+    <h2>4. Dark Mode</h2>
+
+    <button id="btn-mode">Aktifkan Dark Mode</button>
+  </div>
+
+
+  <!-- 5. Pagination API -->
+  <div class="kotak">
+    <h2>5. Pagination Data API</h2>
+
+    <button id="btn-sebelumnya">Previous</button>
+    <button id="btn-berikutnya">Next</button>
+
+    <div id="out-pagination"></div>
+  </div>
+
+
+  <!-- 6. Todo List -->
+  <div class="kotak">
+    <h2>6. Todo List</h2>
+
+    <input type="text" id="input-todo" placeholder="Masukkan kegiatan">
+
+    <button id="btn-tambah-todo">Tambah</button>
+
+    <div id="out-todo"></div>
+  </div>
+
+
+  <script src="latihan4.js"></script>
+
+</body>
+</html>

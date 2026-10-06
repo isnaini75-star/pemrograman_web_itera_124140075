@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan 3</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 16px;
+      background: #f8fafc;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    .kotak {
+      background: #fff;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 14px;
+    }
+
+    .kotak h2 {
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    input {
+      padding: 8px;
+      width: 150px;
+      margin-right: 6px;
+    }
+
+    button {
+      padding: 8px 14px;
+      cursor: pointer;
+      margin: 3px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background: #f1f5f9;
+    }
+
+    .hasil {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #1d4ed8;
+    }
+
+    .form-input {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Latihan 3 (124140123)</h1>
+
+  <!-- 1. Data mahasiswa -->
+  <div class="kotak">
+    <h2>1. Data Mahasiswa</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>NIM</th>
+          <th>Jurusan</th>
+          <th>Nilai</th>
+        </tr>
+      </thead>
+
+      <tbody id="tabel-mahasiswa"></tbody>
+    </table>
+  </div>
+
+
+  <!-- 2. Nilai tertinggi -->
+  <div class="kotak">
+    <h2>2. Mahasiswa dengan Nilai Tertinggi</h2>
+
+    <button id="btn-tertinggi">Cari Nilai Tertinggi</button>
+
+    <div class="hasil" id="out-tertinggi"></div>
+  </div>
+
+
+  <!-- 3. Nilai di atas rata-rata -->
+  <div class="kotak">
+    <h2>3. Mahasiswa dengan Nilai di Atas Rata-rata</h2>
+
+    <button id="btn-rata-rata">Tampilkan</button>
+
+    <div id="out-rata-rata"></div>
+  </div>
+
+
+  <!-- 4. Pengurutan nama -->
+  <div class="kotak">
+    <h2>4. Urutkan Mahasiswa Berdasarkan Nama</h2>
+
+    <button id="btn-naik">Ascending</button>
+    <button id="btn-turun">Descending</button>
+
+    <div id="out-urutan"></div>
+  </div>
+
+
+  <!-- 5. CRUD -->
+  <div class="kotak">
+    <h2>5. CRUD Data Mahasiswa</h2>
+
+    <div class="form-input">
+      <label>
+        Nama:
+        <input type="text" id="input-nama">
+      </label>
+    </div>
+
+    <div class="form-input">
+      <label>
+        NIM:
+        <input type="text" id="input-nim">
+      </label>
+    </div>
+
+    <div class="form-input">
+      <label>
+        Jurusan:
+        <input type="text" id="input-jurusan">
+      </label>
+    </div>
+
+    <div class="form-input">
+      <label>
+        Nilai:
+        <input type="number" id="input-nilai">
+      </label>
+    </div>
+
+    <button id="btn-tambah">Tambah Mahasiswa</button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>NIM</th>
+          <th>Jurusan</th>
+          <th>Nilai</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+
+      <tbody id="tabel-crud"></tbody>
+    </table>
+  </div>
+
+
+  <script src="latihan3.js"></script>
+
+</body>
+</html>

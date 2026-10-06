@@ -1,0 +1,273 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #6F3045,
+        #8E4059,
+        #A6536A,
+        #6F3045
+    );
+
+    background-attachment: fixed;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #FFF5F6;
+
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.kotak {
+    background-color: #E8C7C8;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.20),
+        0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.kotak h2 {
+    margin-top: 0;
+    color: #542635;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #4A3B3B;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #D9AEB0;
+    border-radius: 5px;
+    font-size: 14px;
+
+    background-color: #FFF8F5;
+    color: #4A3B3B;
+
+    box-shadow:
+        0 2px 5px rgba(90, 35, 50, 0.10);
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #A6536A;
+
+    box-shadow:
+        0 0 0 2px rgba(166, 83, 106, 0.15),
+        0 3px 8px rgba(90, 35, 50, 0.15);
+}
+
+small {
+    display: block;
+    min-height: 18px;
+    margin-top: 4px;
+    color: red;
+}
+
+button {
+    width: 100%;
+    padding: 11px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+
+    background-color: #A6536A;
+    color: white;
+
+    box-shadow:
+        0 3px 6px rgba(70, 25, 40, 0.25);
+}
+
+button:hover {
+    background-color: #8E4059;
+
+    box-shadow:
+        0 5px 10px rgba(70, 25, 40, 0.30);
+}
+
+.tabel-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 700px;
+
+    border-collapse: separate;
+    border-spacing: 0 6px;
+
+    background-color: transparent;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #C98F91;
+    color: #4A2630;
+}
+
+/* Shadow setiap baris tabel */
+tbody tr {
+    background-color: #FFF8F5;
+
+    box-shadow:
+        0 3px 8px rgba(80, 30, 45, 0.15);
+}
+
+tbody td:first-child {
+    border-radius: 6px 0 0 6px;
+}
+
+tbody td:last-child {
+    border-radius: 0 6px 6px 0;
+}
+
+tbody tr:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 12px rgba(80, 30, 45, 0.22);
+}
+
+.btn-hapus {
+    width: auto;
+    margin: 0;
+    padding: 7px 12px;
+
+    background-color: #9B5267;
+}
+
+.btn-hapus:hover {
+    background-color: #783A4D;
+}
+
+.ringkasan {
+    margin-bottom: 15px;
+}
+
+/* Setiap baris total */
+.baris-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 15px;
+    margin-bottom: 8px;
+
+    background-color: #FFF8F5;
+    border-radius: 7px;
+
+    box-shadow:
+        0 3px 7px rgba(80, 30, 45, 0.15);
+}
+
+.total-akhir {
+    font-size: 18px;
+    font-weight: bold;
+
+    background-color: #D9A6A8;
+    color: #542635;
+
+    box-shadow:
+        0 4px 9px rgba(80, 30, 45, 0.20);
+}
+
+.hasil-pembayaran {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 15px;
+    padding: 15px;
+
+    border-radius: 7px;
+
+    background-color: #D4E0CC;
+
+    font-size: 18px;
+
+    box-shadow:
+        0 4px 9px rgba(50, 70, 40, 0.18);
+}
+
+.hasil-pembayaran strong {
+    font-size: 20px;
+    color: #3F5140;
+}
+
+.btn-reset {
+    margin-top: 20px;
+
+    background-color: #783A4D;
+}
+
+.btn-reset:hover {
+    background-color: #5F293B;
+}
+
+
+/* =========================
+   RESPONSIVE UNTUK HP
+   ========================= */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .kotak {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .baris-total {
+        font-size: 14px;
+    }
+
+    .total-akhir {
+        font-size: 16px;
+    }
+
+    .hasil-pembayaran {
+        font-size: 15px;
+    }
+
+    .hasil-pembayaran strong {
+        font-size: 17px;
+    }
+}

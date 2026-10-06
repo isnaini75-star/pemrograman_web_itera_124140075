@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan 2</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 560px;
+      margin: 30px auto;
+      padding: 0 16px;
+      background: #f8fafc;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    .kotak {
+      background: #fff;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 14px;
+    }
+
+    .kotak h2 {
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+
+    input {
+      padding: 8px;
+      width: 110px;
+      margin-right: 6px;
+    }
+
+    button {
+      padding: 8px 14px;
+      cursor: pointer;
+    }
+
+    pre {
+      margin-top: 10px;
+      padding: 10px;
+      background: #f1f5f9;
+      border-radius: 6px;
+      white-space: pre-wrap;
+      max-height: 220px;
+      overflow-y: auto;
+    }
+
+    .hasil {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #1d4ed8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Latihan 2 (124140123)</h1>
+
+  <!-- 1. Tabel perkalian -->
+  <div class="kotak">
+    <h2>1. Tabel Perkalian</h2>
+
+    <label>
+      Angka:
+      <input type="number" id="in-kali" value="7">
+    </label>
+
+    <button id="btn-kali">Tampilkan</button>
+
+    <pre id="out-kali"></pre>
+  </div>
+
+
+  <!-- 2. Faktorial -->
+  <div class="kotak">
+    <h2>2. Faktorial</h2>
+
+    <label>
+      Angka:
+      <input type="number" id="in-faktorial">
+    </label>
+
+    <button id="btn-faktorial">Hitung</button>
+
+    <div class="hasil" id="out-faktorial"></div>
+  </div>
+
+
+  <!-- 3. Bilangan prima -->
+  <div class="kotak">
+    <h2>3. Bilangan Prima</h2>
+
+    <label>
+      Angka:
+      <input type="number" id="in-prima">
+    </label>
+
+    <button id="btn-prima">Periksa</button>
+
+    <div class="hasil" id="out-prima"></div>
+  </div>
+
+
+  <!-- 4. Kalkulator BMI -->
+  <div class="kotak">
+    <h2>4. Kalkulator BMI</h2>
+
+    <label>
+      Berat (kg):
+      <input type="number" id="in-berat">
+    </label>
+
+    <br>
+
+    <label>
+      Tinggi (cm):
+      <input type="number" id="in-tinggi">
+    </label>
+
+    <button id="btn-bmi">Hitung BMI</button>
+
+    <div class="hasil" id="out-bmi"></div>
+  </div>
+
+
+  <!-- 5. FizzBuzz -->
+  <div class="kotak">
+    <h2>5. FizzBuzz (1-100)</h2>
+
+    <button id="btn-fizzbuzz">Tampilkan</button>
+
+    <pre id="out-fizzbuzz"></pre>
+  </div>
+
+
+  <script src="latihan2.js"></script>
+
+</body>
+</html>
