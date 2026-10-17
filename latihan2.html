@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan Async JavaScript</title>
+
+  <style>
+    * {
+    box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 30px 16px;
+      font-family: Arial, sans-serif;
+      background: #eef7ff;
+      color: #334155;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1 {
+      color: #3984cc;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #6b91b8;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .panel {
+      background: #ffffff;
+      padding: 22px;
+      margin-bottom: 20px;
+      border-radius: 16px;
+      border: 1px solid #d6eaff;
+      box-shadow: 0 6px 20px rgba(91, 151, 210, 0.10);
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+
+    input {
+      flex: 1;
+      min-width: 180px;
+    }
+
+    input,
+    button {
+      padding: 11px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    input {
+      border: 1px solid #b8d9f7;
+      background: #fbfdff;
+      color: #334155;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #66aaf3;
+      box-shadow: 0 0 0 3px rgba(102, 170, 243, 0.15);
+    }
+
+    button {
+      background: #66aaf3;
+      color: #ffffff;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    button:hover:not(:disabled) {
+      background: #398bdc;
+      transform: translateY(-1px);
+    }
+
+    button:disabled {
+      background: #cbdff2;
+      color: #71869a;
+      opacity: 0.8;
+      cursor: not-allowed;
+    }
+
+    .status {
+      padding: 12px;
+      margin: 12px 0;
+      border-radius: 8px;
+      background: #e0f0ff;
+      color: #28649b;
+      border: 1px solid #c7e4ff;
+    }
+
+    .status.error {
+      background: #fff0f0;
+      color: #a33b45;
+      border-color: #ffd4d8;
+    }
+
+    .status.success {
+      background: #e8f8ee;
+      color: #32734b;
+      border-color: #c8edd5;
+    }
+
+    .post {
+      padding: 16px;
+      margin: 12px 0;
+      background: #ffffff;
+      border: 1px solid #dcecff;
+      border-left: 4px solid #66aaf3;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(91, 151, 210, 0.07);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .post:hover {
+      box-shadow: 0 5px 14px rgba(91, 151, 210, 0.14);
+      transform: translateY(-2px);
+    }
+
+    .post h3 {
+      margin-top: 0;
+      color: #3984cc;
+      text-transform: capitalize;
+      line-height: 1.5;
+    }
+
+    .post p {
+      line-height: 1.6;
+    }
+
+    .author {
+      font-size: 13px;
+      color: #6b91b8;
+      margin-bottom: 8px;
+    }
+
+    .pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    #pageInfo {
+      font-size: 14px;
+      color: #4b6b89;
+    }
+
+    .small {
+      font-size: 13px;
+      color: #7893ad;
+    }
+
+    #summary {
+      color: #4b6b89;
+      line-height: 1.6;
+    }
+
+    #searchStatus {
+      color: #6b91b8;
+      font-size: 14px;
+    }
+
+  @media (max-width: 600px) {
+    body {
+      padding: 16px 10px;
+    }
+
+    .panel {
+      padding: 15px;
+    }
+
+    .toolbar {
+      flex-direction: column;
+    }
+
+    input {
+      width: 100%;
+      min-width: 0;
+    }
+
+    .toolbar button {
+      width: 100%;
+    }
+
+    .pagination {
+      gap: 10px;
+    }
+
+    .pagination button {
+      flex: 1;
+    }
+
+    .post {
+      padding: 13px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 16px 10px;
+      }
+
+      .panel {
+        padding: 15px;
+      }
+    }
+  }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <h1>Dashboard Data API</h1>
+    <p class="subtitle">
+      Latihan Fetch API, Async/Await, Retry, dan Pagination
+    </p>
+
+    <section class="panel">
+      <h2>Ringkasan Data</h2>
+      <p id="summary">Data belum dimuat.</p>
+
+      <button id="reloadBtn" type="button">
+        Muat Ulang Data
+      </button>
+
+      <div id="status" class="status" role="status" aria-live="polite">
+        Siap memuat data.
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Daftar Postingan</h2>
+
+      <div class="toolbar">
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Cari judul postingan..."
+          aria-label="Cari judul postingan"
+        >
+        <button id="searchBtn" type="button">Cari</button>
+      </div>
+
+      <p class="small" id="searchStatus">
+        Ketik kata kunci untuk mencari postingan.
+      </p>
+
+      <div id="postList"></div>
+
+      <div class="pagination">
+        <button id="prevBtn" type="button" disabled>
+          Sebelumnya
+        </button>
+
+        <span id="pageInfo">Halaman 1</span>
+
+        <button id="nextBtn" type="button" disabled>
+          Berikutnya
+        </button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Penanganan Error</h2>
+      <p>
+        Bagian ini menampilkan error yang berhasil ditangani
+        oleh aplikasi.
+      </p>
+
+      <button id="errorBtn" type="button">
+        Uji Penanganan Error
+      </button>
+
+      <div id="errorBox" class="status" role="status" aria-live="polite">
+        Belum ada error.
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

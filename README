@@ -1,0 +1,36 @@
+Dashboard Mahasiswa
+
+Website Dashboard Mahasiswa merupakan aplikasi sederhana yang membantu mahasiswa mengatur jadwal kuliah dan kegiatan dalam satu halaman. Website ini dibuat menggunakan HTML, CSS, dan JavaScript dengan tampilan yang sederhana dan mudah digunakan.
+
+Fitur Website :
+1. Beranda
+    - Menampilkan ringkasan total tugas dan kegiatan.
+    - Menampilkan jumlah tugas yang sudah selesai.
+    - Menampilkan jumlah jadwal hari ini.
+    - Menampilkan tugas prioritas dan jadwal terdekat.
+    - Menyediakan tombol untuk menambahkan kegiatan.
+
+2. Jadwal Kuliah
+    - Menampilkan daftar jadwal kuliah.
+    - Menyajikan informasi hari, mata kuliah, waktu, dan ruangan.
+
+3. Jadwal Kegiatan
+    - Menambahkan kegiatan baru.
+    - Mengisi nama kegiatan, tanggal, waktu, jenis, dan lokasi.
+    - Mencari kegiatan berdasarkan nama.
+    - Mengedit dan mengelola kegiatan yang tersimpan.
+
+4. Tampilan Antarmuka
+    - Navigasi untuk berpindah antarhalaman.
+    - Menampilkan profil mahasiswa.
+    - Menampilkan tanggal dan jam.
+    - Menggunakan desain card dengan efek bayangan (shadow) dan animasi agar tampilan lebih menarik.
+    - Mendukung tampilan responsif pada berbagai ukuran layar.
+    - Teknologi yang Digunakan
+
+Tujuan Pembuatan
+Website ini dibuat untuk membantu mahasiswa mengelola jadwal kuliah dan kegiatan secara lebih teratur, mempermudah pemantauan agenda, serta menerapkan penggunaan HTML, CSS, dan JavaScript dalam pengembangan website.
+
+Pengembang: Isnaini Febriana
+NIM: 124140075
+Program Studi: Teknik Informatika

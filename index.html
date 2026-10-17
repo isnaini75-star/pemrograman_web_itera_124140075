@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard Mahasiswa - Isnaini Febriana</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+
+    <!-- NAVIGASI ATAS -->
+    <header class="navbar">
+
+      <nav class="menu">
+        <button class="menu-item active" data-page="beranda">
+          Beranda
+        </button>
+        <button class="menu-item" data-page="kuliah">
+          Jadwal Kuliah
+        </button>
+        <button class="menu-item" data-page="kegiatan">
+          Jadwal Kegiatan
+        </button>
+      </nav>
+
+      <div class="profile">
+        <div class="avatar">IF</div>
+        <div class="profile-info">
+          <h3>Isnaini Febriana</h3>
+          <p class="nim">124140075</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+
+      <!-- HEADER HALAMAN -->
+      <section class="welcome">
+        <div>
+          <h1>Halo, Isnainii! 👋</h1>
+          <p class="welcome-desc">
+            Atur jadwal kuliah dan kegiatanmu dalam satu tempat.
+          </p>
+        </div>
+
+        <div class="panel" id="quoteBox">
+            <p id="quoteText">Memuat kutipan...</p>
+            <p id="quoteAuthor"></p>
+        </div>
+
+        <div class="date-panel">
+          <div class="date-box">
+            <div id="day">17</div>
+            <div id="month">OKT</div>
+          </div>
+          <div class="date-info">
+            <div id="fullDate">Sabtu, 17 Oktober 2026</div>
+            <div id="clock" class="clock">10:00:00</div>
+            <div id="syncTime" class="tz-info">Sinkron: -</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content">
+
+        <!-- BERANDA -->
+        <div id="beranda" class="page active-page">
+          <div class="section-heading">
+            <div>
+              <h2>Ringkasan Aktivitas</h2>
+              <p>Pantau aktivitas akademikmu di sini.</p>
+            </div>
+          </div>
+
+          <div class="grid-3 stats">
+            <div class="card stat stat-blue">
+              <div class="stat-top">
+                <span>Total Tugas</span>
+                <span class="stat-icon">▤</span>
+              </div>
+              <div class="num" id="totalCount">0</div>
+              <p>Seluruh tugas dan aktivitas</p>
+            </div>
+
+            <div class="card stat stat-green">
+              <div class="stat-top">
+                <span>Tugas Selesai</span>
+                <span class="stat-icon">✓</span>
+              </div>
+              <div class="num" id="doneCount">0</div>
+              <p>Aktivitas yang sudah selesai.</p>
+            </div>
+
+            <div class="card stat stat-orange">
+              <div class="stat-top">
+                <span>Jadwal Hari Ini</span>
+                <span class="stat-icon">◷</span>
+              </div>
+              <div class="num" id="todayCount">0</div>
+              <p>Agenda pada hari ini</p>
+            </div>
+          </div>
+
+          <div class="grid-2 dashboard-panels">
+            <div class="card info">
+              <div class="card-heading">
+                <div>
+                  <span class="section-tag">PRIORITAS</span>
+                  <h3>Tugas Saat Ini</h3>
+                </div>
+                <span class="heading-icon">📌</span>
+              </div>
+              <div id="priorityList">
+                Tidak ada tugas saat ini.
+              </div>
+            </div>
+
+            <div class="card info">
+              <div class="card-heading">
+                <div>
+                  <span class="section-tag">AGENDA</span>
+                  <h3>Jadwal Terdekat</h3>
+                </div>
+                <span class="heading-icon">📅</span>
+              </div>
+              <div id="upcomingList">
+                Tidak ada jadwal terdekat.
+              </div>
+            </div>
+          </div>
+
+          <div class="bottom-banner">
+            <div>
+              <h3>Rencanakan harimu dengan baik!</h3>
+              <p>
+                Catat kegiatan penting agar tidak ada jadwal yang terlewat.
+              </p>
+            </div>
+            <button class="btn primary" data-page="kegiatan">
+              + Tambah Kegiatan
+            </button>
+          </div>
+        </div>
+
+        <!-- JADWAL KULIAH -->
+        <div id="kuliah" class="page">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">ACADEMIC PLANNER</p>
+              <h2>Jadwal Kuliah</h2>
+              <p>Daftar perkuliahanku.</p>
+            </div>
+          </div>
+
+          <div class="card table-card">
+            <table class="jadwal-table">
+              <thead>
+                <tr>
+                  <th>Hari</th>
+                  <th>Mata Kuliah</th>
+                  <th>Waktu</th>
+                  <th>Ruangan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Senin</td>
+                  <td>Keamanan, kesehatan, keselamatan dan Lingkungan Kerja Industri</td>
+                  <td>10:15 - 12:00</td>
+                  <td>GK2-202</td>
+                </tr>
+                <tr>
+                  <td>Selasa</td>
+                  <td>Kapita Selekta</td>
+                  <td>09:20 - 12:00</td>
+                  <td>GK2-206</td>
+                </tr>
+                <tr>
+                  <td>Selasa</td>
+                  <td>Intelegensi Buatan</td>
+                  <td>13:00 - 15:40</td>
+                  <td>GK2-108</td>
+                </tr>
+                <tr>
+                  <td>Rabu</td>
+                  <td>Praktikum Jaringan Komputer</td>
+                  <td>08:00 - 10:00</td>
+                  <td>Lab IOT</td>
+                </tr>
+                <tr>
+                  <td>Kamis</td>
+                  <td>Metodologi Penelitian</td>
+                  <td>09:20 - 12:00</td>
+                  <td>GK2-222</td>
+                </tr>
+                <tr>
+                  <td>Kamis</td>
+                  <td>Pengembangan Aplikasi Web</td>
+                  <td>13:00 - 14:40</td>
+                  <td>GK2-409</td>
+                </tr>
+                <tr>
+                  <td>Jumat</td>
+                  <td>Sistem Informasi</td>
+                  <td>07:30 - 09:15</td>
+                  <td>GK2-221</td>
+                </tr>
+                <tr>
+                  <td>Jumat</td>
+                  <td>Manajemen Proyek Teknologi Industri</td>
+                  <td>10:20 - 12:00</td>
+                  <td>Daring</td>
+                </tr>
+                <tr>
+                  <td>Jumat</td>
+                  <td>Jaringan Komputer</td>
+                  <td>14:00 - 15:40</td>
+                  <td>GK2-302</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- JADWAL KEGIATAN -->
+        <div id="kegiatan" class="page">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">PERSONAL PLANNER</p>
+              <h2>Jadwal Kegiatan</h2>
+              <p>Tambah dan kelola agenda kegiatanmu.</p>
+            </div>
+          </div>
+
+          <div class="activity-layout">
+
+            <!-- FORM -->
+            <div class="card form-card">
+              <div class="card-heading">
+                <div>
+                  <span class="section-tag">KELOLA AGENDA</span>
+                  <h3>Form Kegiatan</h3>
+                </div>
+                <span class="heading-icon">✎</span>
+              </div>
+
+              <form id="formKegiatan">
+                <div class="form-row">
+                  <label for="nama">Nama Kegiatan</label>
+                  <input type="text" id="nama"
+                    placeholder="Contoh: Rapat organisasi" required>
+                </div>
+
+                <div class="form-row row-3">
+                  <div>
+                    <label for="tanggal">Tanggal</label>
+                    <input type="date" id="tanggal" required>
+                  </div>
+                  <div>
+                    <label for="waktu">Waktu</label>
+                    <input type="time" id="waktu" required>
+                  </div>
+                  <div>
+                    <label for="jenis">Jenis</label>
+                    <select id="jenis">
+                      <option value="Organisasi">Organisasi</option>
+                      <option value="Kuliah">Kuliah</option>
+                      <option value="Akademik">Akademik</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <label for="lokasi">Lokasi</label>
+                  <input type="text" id="lokasi"
+                    placeholder="Contoh: Aula kampus" required>
+                </div>
+
+                <div class="form-actions">
+                <button type="submit" class="btn primary" id="submitBtn">Tambah Kegiatan</button>
+                <button type="button" class="btn ghost" id="cancelEditBtn" style="display:none">Batal Edit</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- DAFTAR KEGIATAN -->
+            <div class="activity-list-panel">
+              <div class="card filter-card">
+                <h3>Daftar Kegiatan</h3>
+                <p class="muted">Cari agenda yang tersimpan.</p>
+
+                <div class="filter-row">
+                  <label for="search" class="visually-hidden">
+                    Cari kegiatan
+                  </label>
+                  <input type="text" id="search"
+                    placeholder="Cari kegiatan...">
+
+                  <label for="filterJenis" class="visually-hidden">
+                    Filter jenis kegiatan
+                  </label>
+                  <select id="filterJenis">
+                    <option value="">Semua jenis</option>
+                    <option value="Organisasi">Organisasi</option>
+                    <option value="Kuliah">Kuliah</option>
+                    <option value="Akademik">Akademik</option>
+                  </select>
+
+                  <button id="clearFilters" type="button" class="btn ghost">
+                    Reset
+                  </button>
+                </div>
+              </div>
+
+              <div id="listKegiatan" class="list-kegiatan"></div>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
