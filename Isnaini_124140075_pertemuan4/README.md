@@ -62,6 +62,6 @@ Pastikan `main.py` dan `math_operations.py` berada di folder yang sama agar modu
 
 Tambahkan screenshot hasil program yang benar-benar dijalankan di terminal pada bagian ini sebelum mengumpulkan tugas.
 
-![docs_soal1.png]
-![docs_soal2.png]
-![docs_soal3.png]
+![Screenshot Soal 1](docs/Soal1.png)
+![Screenshot Soal 1](docs/Soal2.png)
+![Screenshot Soal 1](docs/Soal3.png)
