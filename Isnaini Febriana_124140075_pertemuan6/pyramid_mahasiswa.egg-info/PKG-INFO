@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: pyramid-mahasiswa
+Version: 0.1
+Requires-Dist: pyramid>=2.0
+Requires-Dist: pyramid_jinja2
+Requires-Dist: pyramid_tm
+Requires-Dist: pyramid_retry
+Requires-Dist: pyramid_debugtoolbar
+Requires-Dist: pyramid_sqlalchemy
+Requires-Dist: SQLAlchemy>=2.0
+Requires-Dist: alembic>=1.13
+Requires-Dist: psycopg2-binary>=2.9
+Requires-Dist: waitress>=3.0
+Dynamic: requires-dist
